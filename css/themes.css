@@ -1,0 +1,129 @@
+/* Theme variants */
+
+[data-theme="dark"] {
+  --bg-base: #0f172a;
+  --bg-gradient-1: #1e1b4b;
+  --bg-gradient-2: #0f172a;
+  --bg-gradient-3: #134e4a;
+  --primary: #7c3aed;
+  --primary-hover: #8b5cf6;
+  --accent: #06b6d4;
+  --accent-glow: rgba(6, 182, 212, 0.4);
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --glass-bg: rgba(15, 23, 42, 0.65);
+  --glass-border: rgba(248, 250, 252, 0.08);
+  --btn-bg: rgba(30, 41, 59, 0.8);
+  --btn-fn: rgba(124, 58, 237, 0.25);
+  --btn-operator: rgba(6, 182, 212, 0.2);
+  --btn-equals: linear-gradient(135deg, #7c3aed, #06b6d4);
+}
+
+[data-theme="light"] {
+  --bg-base: #f1f5f9;
+  --bg-gradient-1: #e0e7ff;
+  --bg-gradient-2: #f8fafc;
+  --bg-gradient-3: #ccfbf1;
+  --primary: #6d28d9;
+  --primary-hover: #7c3aed;
+  --accent: #0891b2;
+  --accent-glow: rgba(8, 145, 178, 0.35);
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(15, 23, 42, 0.1);
+  --glass-shadow: 0 8px 32px rgba(15, 23, 42, 0.12);
+  --btn-bg: rgba(241, 245, 249, 0.95);
+  --btn-hover: rgba(226, 232, 240, 1);
+  --btn-fn: rgba(124, 58, 237, 0.12);
+  --btn-operator: rgba(6, 182, 212, 0.15);
+  --display-bg: rgba(15, 23, 42, 0.04);
+}
+
+[data-theme="light"] .app-background {
+  opacity: 0.6;
+}
+
+[data-theme="neon"] {
+  --bg-base: #050510;
+  --bg-gradient-1: #0a0015;
+  --bg-gradient-2: #050510;
+  --bg-gradient-3: #001a1a;
+  --primary: #00ff88;
+  --primary-hover: #33ffaa;
+  --accent: #ff00ff;
+  --accent-glow: rgba(255, 0, 255, 0.5);
+  --text: #e0ffe0;
+  --text-muted: #88ffaa;
+  --success: #00ff88;
+  --glass-bg: rgba(0, 20, 10, 0.7);
+  --glass-border: rgba(0, 255, 136, 0.2);
+  --btn-bg: rgba(0, 30, 20, 0.85);
+  --btn-fn: rgba(0, 255, 136, 0.15);
+  --btn-operator: rgba(255, 0, 255, 0.15);
+  --btn-equals: linear-gradient(135deg, #00ff88, #ff00ff);
+}
+
+[data-theme="neon"] .brand-icon,
+[data-theme="neon"] .calc-btn:hover,
+[data-theme="neon"] .history-item:hover {
+  filter: drop-shadow(0 0 8px var(--accent-glow));
+}
+
+[data-theme="neon"] .calc-btn.fn {
+  color: var(--primary);
+  text-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
+}
+
+[data-theme="neon"] .history-result {
+  color: var(--primary);
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+[data-theme="neon"] .app-background {
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 20%, rgba(0, 255, 136, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(255, 0, 255, 0.1), transparent),
+    linear-gradient(160deg, var(--bg-gradient-1), var(--bg-gradient-2));
+}
+
+[data-theme="cyberpunk"] {
+  --bg-base: #0d0221;
+  --bg-gradient-1: #1a0533;
+  --bg-gradient-2: #0d0221;
+  --bg-gradient-3: #2d1b4e;
+  --primary: #ff2a6d;
+  --primary-hover: #ff5c8d;
+  --accent: #05d9e8;
+  --accent-glow: rgba(5, 217, 232, 0.45);
+  --text: #d1f7ff;
+  --text-muted: #a0a0b0;
+  --glass-bg: rgba(26, 5, 51, 0.75);
+  --glass-border: rgba(255, 42, 109, 0.25);
+  --btn-bg: rgba(45, 27, 78, 0.85);
+  --btn-fn: rgba(255, 42, 109, 0.2);
+  --btn-operator: rgba(5, 217, 232, 0.2);
+  --btn-equals: linear-gradient(135deg, #ff2a6d, #05d9e8);
+}
+
+[data-theme="cyberpunk"] .angle-btn.active {
+  background: linear-gradient(135deg, #ff2a6d, #7209b7);
+  box-shadow: 0 0 16px rgba(255, 42, 109, 0.5);
+}
+
+[data-theme="cyberpunk"] .app-background {
+  background:
+    linear-gradient(180deg, transparent 0%, rgba(255, 42, 109, 0.03) 50%, transparent 100%),
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(114, 9, 183, 0.2), transparent),
+    linear-gradient(160deg, var(--bg-gradient-1), var(--bg-gradient-2), var(--bg-gradient-3));
+}
+
+[data-theme="cyberpunk"] .calculator-card {
+  box-shadow:
+    0 0 40px rgba(255, 42, 109, 0.15),
+    var(--glass-shadow);
+}
+
+[data-theme="cyberpunk"] .calc-btn.equals:hover {
+  box-shadow: 0 0 28px rgba(255, 42, 109, 0.45);
+}

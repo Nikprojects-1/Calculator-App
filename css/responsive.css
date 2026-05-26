@@ -1,0 +1,144 @@
+/* Responsive breakpoints */
+
+@media (max-width: 1024px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .history-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(320px, 90vw);
+    height: 100vh;
+    max-height: 100vh;
+    z-index: 200;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border-left: 1px solid var(--glass-border);
+    border-radius: 0;
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .history-sidebar.open {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .history-sidebar .sidebar-header {
+    border-radius: 0;
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+
+  .history-list {
+    max-height: none;
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .header-controls {
+    justify-content: space-between;
+  }
+
+  .app-title {
+    font-size: 1.1rem;
+  }
+
+  .scientific-panel {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .calc-btn.fn {
+    min-height: 42px;
+    font-size: 0.65rem;
+  }
+
+  .calculator-card {
+    padding: 1rem;
+  }
+
+  .keyboard-hint {
+    font-size: 0.65rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    padding: 0.75rem;
+  }
+
+  .scientific-panel {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .memory-row {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.35rem;
+  }
+
+  .mem-btn {
+    font-size: 0.6rem;
+    padding: 0.35rem 0.2rem;
+  }
+
+  .main-panel .calc-btn {
+    min-height: 52px;
+  }
+
+  .calc-btn.equals {
+    min-height: 100%;
+  }
+
+  .display-area {
+    padding: 0.75rem 1rem;
+  }
+
+  .result-display {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .history-sidebar {
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .app-background {
+    animation: none;
+  }
+}
+
+/* Touch devices — larger tap targets */
+@media (hover: none) and (pointer: coarse) {
+  .calc-btn {
+    min-height: 52px;
+  }
+
+  .calc-btn:active {
+    transform: scale(0.98);
+  }
+}
